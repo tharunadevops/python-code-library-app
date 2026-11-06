@@ -1,6 +1,6 @@
 services:
   db:
-    image: chakalimurali/database:v4
+    image: tharuna1/database:v4
     deploy:
       replicas: 1
     ports:
@@ -11,7 +11,7 @@ services:
       - db_data:/var/lib/mysql
 
   auth_service:
-    image: chakalimurali/auth:v1
+    image: tharuna1/borrow:v1
     deploy:
       replicas: 1
     ports:
@@ -24,7 +24,7 @@ services:
       - db
 
   book_service:
-    image: chakalimurali/book:v2
+    image: tharuna1/book:v2
     deploy:
       replicas: 1
     ports:
@@ -37,7 +37,7 @@ services:
       - db
 
   borrow_service:
-    image: chakalimurali/borrow:v3
+    image: tharuna1/borrow:v3
     deploy:
       replicas: 1
     ports:
@@ -50,7 +50,7 @@ services:
       - db
 
   frontend:
-    image: chakalimurali/frontend:v5
+    image: tharuna1/frontened:v5
     deploy:
       replicas: 1
     ports:
